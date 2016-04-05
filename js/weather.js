@@ -35,17 +35,36 @@ function callApi(lat, lon) {
     });
 }
 
+//WIND DIRECTION ROTATE
+var transformProp = (function() {
+    var testEl = document.createElement("div");
+    
+    if (testEl.style.transform == null) {
+        var vendors = ["Webkit", "Moz", "ms"];
+        
+        for (var vendor in vendors) {
+            if (testEl.style[ vendors[vendor] + "Transform" ] !== undefined) {
+                return vendors[vendor] + "Transform";
+            }
+        }
+    }
+    
+    return "transform";
+})();
+
 //WRITE THE GEO-DATA TO THE PAGE
 function populatePage() {
     var location = document.getElementById("location");
     var temperature = document.getElementById("temperature");
     var wind = document.getElementById("wind");
+    var windDir = document.getElementById("windDir");
     var conditions = document.getElementById("conditions");
     
     location.textContent = json.name;
     temperature.textContent = Math.round(json.main.temp * 10) / 10;
+    
     wind.textContent = json.wind.speed;
-    //conditions.textContent = json.weather[0].description;
+    windDir.style[transformProp] = "rotate(" + json.wind.deg + "deg)";
     
     conditions.setAttribute("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
     conditions.setAttribute("alt", json.weather[0].description);
