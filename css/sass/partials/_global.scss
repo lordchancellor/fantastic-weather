@@ -1,5 +1,16 @@
 //GLOBAL STYLES
 
+//FLEXBOX
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    
+    .siteContent {
+        flex: 1;
+    }
+}
+
 //BUTTONS
 .btn-github {
     background: $github;

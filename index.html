@@ -22,7 +22,7 @@
 	    <![endif]-->
 	</head>
 
-	<body>
+	<body id="body">
         <section id="loader" class="loader">
             <div class="sky">
                 <div class="sun">
@@ -44,14 +44,14 @@
             <div class="loading">Loading</div>
         </section>
         
-		<section id="fantasticWeather">
+		<section id="fantasticWeather" class="siteContent">
             <div class="container">
                   <h1 id="location"></h1>
 
                 <div class="weatherStrip">
                     <span id="temperature"></span>&deg;C
                     <span id="wind"></span>
-                    <span id="conditions"></span>
+                    <span><img id="conditions"></span>
                 </div>
 
                 <span class="comment">It'll be colder in Sweden</a>
@@ -59,7 +59,7 @@
             </div>
 		</section>
 
-        <section id="social">
+        <footer id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
@@ -70,11 +70,7 @@
                         <a class="btn btn-success">Return to MisterFord.co.uk</a>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <footer>
-            <div class="container">
+                
                 <div class="row">
                     <div class="col-sm-12">
                         &copy;<span id="currentYear"></span> 
