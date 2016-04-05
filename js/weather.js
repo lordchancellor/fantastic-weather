@@ -57,14 +57,13 @@ function populatePage() {
     var location = document.getElementById("location");
     var temperature = document.getElementById("temperature");
     var wind = document.getElementById("wind");
-    var windDir = document.getElementById("windDir");
     var conditions = document.getElementById("conditions");
     
     location.textContent = json.name;
-    temperature.textContent = Math.round(json.main.temp * 10) / 10;
+    temperature.textContent = Math.round(json.main.temp * 10) / 10 + "\u2103";
     
-    wind.textContent = json.wind.speed;
-    windDir.style[transformProp] = "rotate(" + json.wind.deg + "deg)";
+    wind.childNodes[3].textContent = Math.round(json.wind.speed) + "mph";
+    wind.childNodes[1].style[transformProp] = "rotate(" + json.wind.deg + "deg)";
     
     conditions.setAttribute("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
     conditions.setAttribute("alt", json.weather[0].description);
