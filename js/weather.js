@@ -8,8 +8,9 @@ function contentLoaded() {
     populatePage();
     
     document.getElementById("loader").style.display = "none";
+    document.getElementById("body").classList.add("site");
     document.getElementById("fantasticWeather").style.display = "block";
-    document.getElementById("social").style.display = "block";
+    document.getElementById("footer").style.display = "block";
 }
 
 //GET THE CURRENT LATITUDE AND LONGITUDE
@@ -42,9 +43,13 @@ function populatePage() {
     var conditions = document.getElementById("conditions");
     
     location.textContent = json.name;
-    temperature.textContent = json.main.temp;
+    temperature.textContent = Math.round(json.main.temp * 10) / 10;
     wind.textContent = json.wind.speed;
-    conditions.textContent = json.weather[0].description;
+    //conditions.textContent = json.weather[0].description;
+    
+    conditions.setAttribute("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
+    conditions.setAttribute("alt", json.weather[0].description);
+    conditions.setAttribute("title", json.weather[0].description);
 }
 
 if (navigator.geolocation) {    
