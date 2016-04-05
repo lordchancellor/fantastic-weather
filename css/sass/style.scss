@@ -1,0 +1,12 @@
+/*********************************************
+** Primary Stylesheet for Fantastic Weather **
+*********************************************/
+
+//MODULES
+@import 'modules/palette';
+@import 'modules/mixins';
+
+//PARTIALS
+@import 'partials/global';
+@import 'partials/loader';
+@import 'partials/main-content';
