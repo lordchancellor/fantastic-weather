@@ -3,6 +3,15 @@
 var json;
 var geoData = {};
 
+//SWITCH OFF THE LOADER WHEN THE GEO DATA IS READY
+function contentLoaded() {
+    populatePage();
+    
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("fantasticWeather").style.display = "block";
+    document.getElementById("social").style.display = "block";
+}
+
 //GET THE CURRENT LATITUDE AND LONGITUDE
 function getGeoData(position) {
     geoData.lat = position.coords.latitude;
@@ -15,37 +24,33 @@ function getGeoData(position) {
 function callApi(lat, lon) {
     console.log("You are at: " + lat + ", " + lon);
     var apiKey = "1625f9ff65d8544701fddfd57eef8846";
-    var apiCall = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=" + apiKey;
+    var apiCall = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&APPID=" + apiKey;
 
     $.getJSON(apiCall, function(data) {
         json = data;
         console.log("Returning data...");
         console.log(JSON.stringify(data));
+        contentLoaded();
     });
 }
 
 //WRITE THE GEO-DATA TO THE PAGE
 function populatePage() {
-    var pageLat = document.getElementById('lat');
-    var pageLon = document.getElementById('lon');
-    var pageLoc = document.getElementById('loc');
+    var location = document.getElementById("location");
+    var temperature = document.getElementById("temperature");
+    var wind = document.getElementById("wind");
+    var conditions = document.getElementById("conditions");
     
-    pageLat.textContent = geoData.lat;
-    pageLon.textContent = geoData.lon;
-    pageLoc.textContent = json.name;
+    location.textContent = json.name;
+    temperature.textContent = json.main.temp;
+    wind.textContent = json.wind.speed;
+    conditions.textContent = json.weather[0].description;
 }
 
 if (navigator.geolocation) {    
     navigator.geolocation.getCurrentPosition(function(position) {
         getGeoData(position);
     });
-}
-
-if (addEventListener) {
-    document.getElementById('weatherMe').addEventListener('click', populatePage, false);
-}
-else {
-    document.getElementById('weatherMe').attachEvent('onclick', populatePage);
 }
 
 

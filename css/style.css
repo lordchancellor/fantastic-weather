@@ -1,6 +1,22 @@
 /*********************************************
 ** Primary Stylesheet for Fantastic Weather **
 *********************************************/
+.btn-github {
+  background: #333333;
+  border-color: #111111;
+  color: #ffffff; }
+  .btn-github:hover {
+    background: #222222;
+    color: #ffffff; }
+
+.btn-twitter {
+  background: #55acee;
+  border-color: #3E7EAE;
+  color: #ffffff; }
+  .btn-twitter:hover {
+    background: #4C9AD4;
+    color: #ffffff; }
+
 @keyframes wave {
   0% {
     border-radius: 25%; }
@@ -154,7 +170,11 @@ body {
 .r:nth-child(8) {
   transform: rotate(360deg); }
 
-#fantasticWeather {
+#fantasticWeather,
+#social {
   display: none; }
+
+#fantasticWeather .weatherStrip #conditions {
+  text-transform: capitalize; }
 
 /*# sourceMappingURL=style.css.map */

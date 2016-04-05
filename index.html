@@ -23,7 +23,7 @@
 	</head>
 
 	<body>
-        <div class="loader">
+        <section id="loader" class="loader">
             <div class="sky">
                 <div class="sun">
                     <div class="shine">
@@ -42,27 +42,53 @@
                 <div class="waves"></div>
             </div>
             <div class="loading">Loading</div>
-        </div>
+        </section>
         
-		<div id="fantasticWeather" class="container">
-			<h1>Fantastic Weather</h1>
+		<section id="fantasticWeather">
+            <div class="container">
+                  <h1 id="location"></h1>
 
-			<h3>Let's make something amazing</h3>
-            
-            <div class="apiData">
-                <span class="label">Longitude: </span>
-                <span id="lon"></span>
-                
-                <span class="label">Latitude: </span>
-                <span id="lat"></span>
-                
-                <span class="label">Location: </span>
-                <span id="loc"></span>
+                <div class="weatherStrip">
+                    <span id="temperature"></span>&deg;C
+                    <span id="wind"></span>
+                    <span id="conditions"></span>
+                </div>
+
+                <span class="comment">It'll be colder in Sweden</a>
+                <span class="creatureWarning">Beware of Beholders</span>
             </div>
-            
-            <a id="weatherMe" class="btn btn-primary">Weather Me!</a>
-		</div>
+		</section>
+
+        <section id="social">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <a class="btn btn-twitter">Tweet this <i class="fa fa-lg fa-twitter"></i></a>
+                        <a class="btn btn-github" href="https://github.com/lordchancellor/fantastic-weather" target="_blank" title="View this project on GitHub">
+                            View this project on GitHub <i class="fa fa-lg fa-github"></i>
+                        </a>
+                        <a class="btn btn-success">Return to MisterFord.co.uk</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        &copy;<span id="currentYear"></span> 
+                        <a href="http://misterford.co.uk" target="_blank" title="Christopher Ford">Christopher Ford</a>;
+                        Incredible loader by <a href="https://twitter.com/flktcrnpio" target="_blank" title="Flkt Crnpio">Flkt Crnpio</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 		<script src="js/weather.js"></script>
+        <script>
+            //Display current year in footer
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+        </script>
 	</body>
 </html>
