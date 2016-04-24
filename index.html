@@ -10,7 +10,7 @@
 		<title>Fantastic Weather</title>
 
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -43,49 +43,52 @@
             </div>
             <div class="loading">Loading</div>
         </section>
-        
+
 		<section id="fantasticWeather" class="siteContent">
             <div class="container">
                   <h1 id="location"></h1>
 
                 <div class="weatherStrip">
                     <span id="temperature"></span>
-                    
+
                     <div id="wind">
                         <div><i id="windDir" class="fa fa-lg fa-long-arrow-up"></i></div>
                         <div></div>
-                    </div>                    
-                    
+                    </div>
+
                     <span><img id="conditions"></span>
                 </div>
 
-                <span class="comment">It'll be colder in Sweden</a>
-                <span class="creatureWarning">Beware of Beholders</span>
+				<div class="messageWrapper">
+                	<span id="comment">It'll be colder in Sweden</span>
+                	<span id="creatureWarning">Beware of Beholders</span>
+				</div>
             </div>
 		</section>
 
         <footer id="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <a class="btn btn-twitter">Tweet this <i class="fa fa-lg fa-twitter"></i></a>
+                    <div class="col-sm-12">
+                        <a class="btn btn-twitter"><i class="fa fa-lg fa-twitter"></i></a>
                         <a class="btn btn-github" href="https://github.com/lordchancellor/fantastic-weather" target="_blank" title="View this project on GitHub">
-                            View this project on GitHub <i class="fa fa-lg fa-github"></i>
+                            <i class="fa fa-lg fa-github"></i>
                         </a>
-                        <a class="btn btn-success">Return to MisterFord.co.uk</a>
+                        <a class="btn btn-success"><i class="fa fa-home"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="row">
-                    <div class="col-sm-12">
-                        &copy;<span id="currentYear"></span> 
+                    <div class="col-sm-12 copyright">
+                        &copy;<span id="currentYear"></span>
                         <a href="http://misterford.co.uk" target="_blank" title="Christopher Ford">Christopher Ford</a>;
-                        Incredible loader by <a href="https://twitter.com/flktcrnpio" target="_blank" title="Flkt Crnpio">Flkt Crnpio</a>
+                        loader by <a href="https://twitter.com/flktcrnpio" target="_blank" title="Flkt Crnpio">Flkt Crnpio</a>
                     </div>
                 </div>
             </div>
         </footer>
 
+		<script src="js/messages.js"></script>
 		<script src="js/weather.js"></script>
         <script>
             //Display current year in footer

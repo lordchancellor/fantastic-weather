@@ -181,24 +181,49 @@ body {
 .r:nth-child(8) {
   transform: rotate(360deg); }
 
-#fantasticWeather h1 {
-  text-align: center; }
-#fantasticWeather .weatherStrip {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; }
-  #fantasticWeather .weatherStrip > span, #fantasticWeather .weatherStrip > div {
-    margin-left: 10%;
-    margin-right: 10%; }
-  #fantasticWeather .weatherStrip #wind {
+#fantasticWeather {
+  background-size: cover; }
+  #fantasticWeather h1 {
+    text-align: center; }
+  #fantasticWeather .weatherStrip {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center; }
-  #fantasticWeather .weatherStrip #conditions {
-    text-transform: capitalize; }
+    #fantasticWeather .weatherStrip > span, #fantasticWeather .weatherStrip > div {
+      margin-left: 10%;
+      margin-right: 10%; }
+    #fantasticWeather .weatherStrip #wind {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+  #fantasticWeather .messageWrapper {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 3.0rem;
+    display: flex;
+    flex-direction: column; }
+    #fantasticWeather .messageWrapper span:first-of-type {
+      margin-bottom: 20px; }
 
 footer {
-  background: #e1e1e1; }
+  background: #333;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+  color: #ffffff; }
+  footer a.btn {
+    margin-left: 3px;
+    margin-right: 3px; }
+    footer a.btn:first-of-type {
+      margin-left: 0; }
+    footer a.btn:last-of-type {
+      margin-right: 0; }
+  footer .copyright {
+    margin-top: 5px; }
+    footer .copyright a {
+      color: #ffffff; }
+      footer .copyright a:hover, footer .copyright a:focus {
+        color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */
