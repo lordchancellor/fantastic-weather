@@ -13,6 +13,8 @@
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 
+        <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Calligraffitti' rel='stylesheet' type='text/css'>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 		<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -46,7 +48,7 @@
 
 		<section id="fantasticWeather" class="siteContent">
             <div class="container">
-                  <h1 id="location"></h1>
+                <h1 id="location"></h1>
 
                 <div class="weatherStrip">
                     <span id="temperature"></span>
@@ -61,7 +63,17 @@
 
 				<div class="messageWrapper">
                 	<span id="comment">It'll be colder in Sweden</span>
-                	<span id="creatureWarning">Beware of Beholders</span>
+				</div>
+
+				<div class="creatureWrapper">
+					<div class="topRow">
+						<h3>Creature Warning</h3>
+					</div>
+
+					<div class="creatureTable">
+						<div id="creatureWarning">Beware of Beholders</div>
+						<div class="imgWrapper"><img src="img/beholder.jpg"></div>
+					</div>
 				</div>
             </div>
 		</section>
@@ -70,11 +82,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <a class="btn btn-twitter"><i class="fa fa-lg fa-twitter"></i></a>
+						<a href="#" class="btn btn-twitter" title="Tweet This">
+							<i class="fa fa-lg fa-twitter"></i>
+						</a>
                         <a class="btn btn-github" href="https://github.com/lordchancellor/fantastic-weather" target="_blank" title="View this project on GitHub">
                             <i class="fa fa-lg fa-github"></i>
                         </a>
-                        <a class="btn btn-success"><i class="fa fa-home"></i></a>
+                        <a class="btn btn-success" title="Return to MisterFord.co.uk" href="http://misterford.co.uk" target="_blank"><i class="fa fa-home"></i></a>
                     </div>
                 </div>
 

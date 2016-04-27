@@ -62,8 +62,10 @@
 
 
 body {
-    background: #fff;
-    font-family: "swiss", Helvetica, Arial, sans-serif;
+    #loader {
+        background: #fff;
+        font-family: "swiss", Helvetica, Arial, sans-serif;
+    }
 }
 
 .loader {

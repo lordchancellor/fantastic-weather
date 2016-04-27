@@ -1,6 +1,13 @@
 /*********************************************
 ** Primary Stylesheet for Fantastic Weather **
 *********************************************/
+html {
+  font-size: 16px; }
+
+body {
+  font-size: 16px;
+  font-family: 'Calligraffitti', sans-serif; }
+
 #fantasticWeather,
 footer {
   display: none; }
@@ -65,7 +72,7 @@ footer {
 @keyframes shine {
   100% {
     transform: rotate(360deg); } }
-body {
+body #loader {
   background: #fff;
   font-family: "swiss", Helvetica, Arial, sans-serif; }
 
@@ -182,14 +189,18 @@ body {
   transform: rotate(360deg); }
 
 #fantasticWeather {
-  background-size: cover; }
+  background-size: cover;
+  color: #ffffff;
+  padding-bottom: 20px; }
   #fantasticWeather h1 {
-    text-align: center; }
+    text-align: center;
+    font-size: 3.0rem; }
   #fantasticWeather .weatherStrip {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    font-size: 1.3rem; }
     #fantasticWeather .weatherStrip > span, #fantasticWeather .weatherStrip > div {
       margin-left: 10%;
       margin-right: 10%; }
@@ -197,14 +208,38 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center; }
+    #fantasticWeather .weatherStrip #conditions {
+      width: 65px; }
+      #fantasticWeather .weatherStrip #conditions[target="title"] {
+        text-transform: capitalize; }
   #fantasticWeather .messageWrapper {
     margin-top: 50px;
-    text-align: center;
-    font-size: 3.0rem;
+    text-align: left;
+    font-size: 2.5rem;
     display: flex;
     flex-direction: column; }
     #fantasticWeather .messageWrapper span:first-of-type {
       margin-bottom: 20px; }
+  #fantasticWeather .creatureWrapper .topRow {
+    width: 100%; }
+    #fantasticWeather .creatureWrapper .topRow h3 {
+      font-size: 2.8rem;
+      text-align: left;
+      color: #d9d9d9; }
+  #fantasticWeather .creatureWrapper .creatureTable {
+    display: flex; }
+    #fantasticWeather .creatureWrapper .creatureTable #creatureWarning {
+      text-align: left;
+      font-size: 2.5rem;
+      flex-grow: 3;
+      padding-right: 10px; }
+    #fantasticWeather .creatureWrapper .creatureTable .imgWrapper {
+      flex-grow: 1;
+      text-align: center; }
+      #fantasticWeather .creatureWrapper .creatureTable .imgWrapper img {
+        width: 80%;
+        margin-top: 10px;
+        border-radius: 25%; }
 
 footer {
   background: #333;
