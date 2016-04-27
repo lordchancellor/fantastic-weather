@@ -4,7 +4,7 @@ var weatherFeedback = [
     {
         "min-temp": -273.1,
         "max-temp": -50.0,
-        "background": "forest.jpg",
+        "background": "abs-zero.jpg",
         "monster": "Beware Ice Elementals traveller, for only they can survive in conditions such as these.",
         "comment": "Unless you are protected by great magics, you will be dead the moment you step outside."
     },
@@ -12,7 +12,7 @@ var weatherFeedback = [
     {
         "min-temp": -50.0,
         "max-temp": -30.0,
-        "background": "forest.jpg",
+        "background": "ice-dragon.jpg",
         "monster": "Be wary traveller, for this is weather perfect for Frost Giants.",
         "comment": "This truly is cold, but not impossibly so. Wrap up warmly, or at the very least, protect yourself with some warming spells."
     },
@@ -20,7 +20,7 @@ var weatherFeedback = [
     {
         "min-temp": -30.0,
         "max-temp": -15.0,
-        "background": "forest.jpg",
+        "background": "snow-battle.jpg",
         "monster": "You would do well to watch your back this day adventurer, for surely these conditions are exactly those preferred by the Yeti as he stalks his prey.",
         "comment": "I would advise against steel armour in this weather, unless you want it fusing to your flesh."
     },
@@ -28,7 +28,7 @@ var weatherFeedback = [
     {
         "min-temp": -15.0,
         "max-temp": -5.0,
-        "background": "forest.jpg",
+        "background": "graveyard.jpg",
         "monster": "Traveller, be mindful of your surroundings. On days such as these, Ice Mephits lie in wait of unwary adventurers.",
         "comment": "It's cold outside traveller, though not impossibly so. Wrap up in furs and find a tavern, you will be fine."
     },
@@ -36,7 +36,7 @@ var weatherFeedback = [
     {
         "min-temp": -5.0,
         "max-temp": 0.0,
-        "background": "forest.jpg",
+        "background": "cold.jpg",
         "monster": "I should advise against forest travel in such conditions, lest you want to find yourself tracked by Frost Wolves.",
         "comment": "I've traversed dungeons colder than this. Keep a few torches handy, their flame will be a friend this day."
     },
@@ -44,7 +44,7 @@ var weatherFeedback = [
     {
         "min-temp": 0.0,
         "max-temp": 5.0,
-        "background": "forest.jpg",
+        "background": "titan.jpg",
         "monster": "The spirits of the nether abound on days such as these. Be wary, for whilst you pass through them, they can surely do damage to you.",
         "comment": "These are almost perfect adventuring conditions. Your armour will keep you warm, just be sure that your sword arm doesn't get chilled."
     },
@@ -52,7 +52,7 @@ var weatherFeedback = [
     {
         "min-temp": 5.0,
         "max-temp": 10.0,
-        "background": "forest.jpg",
+        "background": "stormy-skies.jpg",
         "monster": "Although some think it too cold, I have seen Chimeras on days such as this with mine own eyes. Be watchful of the skies.",
         "comment": "You'll be grateful of your armour today adventurer. The coldest days are surely behind you, but it's not comfortable yet."
     },
@@ -60,7 +60,7 @@ var weatherFeedback = [
     {
         "min-temp": 10.0,
         "max-temp": 15.0,
-        "background": "forest.jpg",
+        "background": "floating-rocks.jpg",
         "monster": "Traveller, be wary of Owlbears in the woods. They oft hunt on days such as these.",
         "comment": "You could almost camp by the roadside in these temperatures adventurer. Handy, when separated from your favourite Inn."
     },
@@ -68,7 +68,7 @@ var weatherFeedback = [
     {
         "min-temp": 15.0,
         "max-temp": 20.0,
-        "background": "forest.jpg",
+        "background": "mild.jpg",
         "monster": "Beware, for the fearsome Beholder abound in conditions such as these.",
         "comment": "On a day such as today, you would be pressed to notice the difference in temperature when entering or exiting those dungeons you so favour."
     },
@@ -84,7 +84,7 @@ var weatherFeedback = [
     {
         "min-temp": 25.0,
         "max-temp": 30.0,
-        "background": "forest.jpg",
+        "background": "temperate.jpg",
         "monster": "In these climes, the Bogleech amass in numbers. Be wary.",
         "comment": "On a day such as this, a canny adventurer would actually seek out the dungeons rather than avoid them."
     },
