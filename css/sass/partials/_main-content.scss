@@ -2,7 +2,7 @@
 
 #fantasticWeather {
     //background-color: rgba(51, 51, 51, 0.2);
-    background-size: cover;
+    //background-size: cover;
     color: $whiteText;
     padding-bottom: 20px;
 
@@ -79,9 +79,8 @@
                 text-align: center;
 
                 img {
-                    width: 80%;
+                    //width: 80%;
                     margin-top: 10px;
-                    border-radius: 25%;
                 }
             }
         }

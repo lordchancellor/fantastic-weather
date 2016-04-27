@@ -72,6 +72,7 @@ function populatePage() {
     var weatherInfo = getWeatherInfo(json.main.temp);
     var comment = document.getElementById("comment");
     var monster = document.getElementById("creatureWarning");
+    var portrait = document.getElementById("creaturePortrait");
 
     location.textContent = json.name;
     temperature.textContent = Math.round(json.main.temp * 10) / 10 + "\u2103";
@@ -87,7 +88,13 @@ function populatePage() {
     monster.textContent = weatherInfo["warning"];
     console.log(weatherInfo["warning"]);
 
-    section.style.background = "linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.1)), url(img/backgrounds/" + weatherInfo["background"] + ")";
+    //section.style.background = "linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.1)), url(img/backgrounds/" + weatherInfo["background"] + ")";
+    section.style.backgroundImage = "url(img/backgrounds/" + weatherInfo["background"] + ")";
+    section.style.backgroundSize = "cover";
+    
+    if (weatherInfo["creature"] !== null) {
+        portrait.setAttribute("src", "img/creatures/" + weatherInfo["creature"]);
+    }
 }
 
 if (navigator.geolocation) {

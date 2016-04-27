@@ -189,7 +189,6 @@ body #loader {
   transform: rotate(360deg); }
 
 #fantasticWeather {
-  background-size: cover;
   color: #ffffff;
   padding-bottom: 20px; }
   #fantasticWeather h1 {
@@ -237,9 +236,7 @@ body #loader {
       flex-grow: 1;
       text-align: center; }
       #fantasticWeather .creatureWrapper .creatureTable .imgWrapper img {
-        width: 80%;
-        margin-top: 10px;
-        border-radius: 25%; }
+        margin-top: 10px; }
 
 footer {
   background: #333;
