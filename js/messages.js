@@ -5,7 +5,8 @@ var weatherFeedback = [
         "min-temp": -273.1,
         "max-temp": -50.0,
         "background": "abs-zero.jpg",
-        "monster": "Beware Ice Elementals traveller, for only they can survive in conditions such as these.",
+        "warning": "Beware Ice Elementals traveller, for only they can survive in conditions such as these.",
+        "creature": null,
         "comment": "Unless you are protected by great magics, you will be dead the moment you step outside."
     },
 
@@ -13,7 +14,8 @@ var weatherFeedback = [
         "min-temp": -50.0,
         "max-temp": -30.0,
         "background": "ice-dragon.jpg",
-        "monster": "Be wary traveller, for this is weather perfect for Frost Giants.",
+        "warning": "Be wary traveller, for this is weather perfect for Frost Giants.",
+        "creature": null,
         "comment": "This truly is cold, but not impossibly so. Wrap up warmly, or at the very least, protect yourself with some warming spells."
     },
 
@@ -21,7 +23,8 @@ var weatherFeedback = [
         "min-temp": -30.0,
         "max-temp": -15.0,
         "background": "snow-battle.jpg",
-        "monster": "You would do well to watch your back this day adventurer, for surely these conditions are exactly those preferred by the Yeti as he stalks his prey.",
+        "warning": "You would do well to watch your back this day adventurer, for surely these conditions are exactly those preferred by the Yeti as he stalks his prey.",
+        "creature": null,
         "comment": "I would advise against steel armour in this weather, unless you want it fusing to your flesh."
     },
 
@@ -29,7 +32,8 @@ var weatherFeedback = [
         "min-temp": -15.0,
         "max-temp": -5.0,
         "background": "graveyard.jpg",
-        "monster": "Traveller, be mindful of your surroundings. On days such as these, Ice Mephits lie in wait of unwary adventurers.",
+        "warning": "Traveller, be mindful of your surroundings. On days such as these, Ice Mephits lie in wait of unwary adventurers.",
+        "creature": null,
         "comment": "It's cold outside traveller, though not impossibly so. Wrap up in furs and find a tavern, you will be fine."
     },
 
@@ -37,7 +41,8 @@ var weatherFeedback = [
         "min-temp": -5.0,
         "max-temp": 0.0,
         "background": "cold.jpg",
-        "monster": "I should advise against forest travel in such conditions, lest you want to find yourself tracked by Frost Wolves.",
+        "warning": "I should advise against forest travel in such conditions, lest you want to find yourself tracked by Frost Wolves.",
+        "creature": null,
         "comment": "I've traversed dungeons colder than this. Keep a few torches handy, their flame will be a friend this day."
     },
 
@@ -45,7 +50,8 @@ var weatherFeedback = [
         "min-temp": 0.0,
         "max-temp": 5.0,
         "background": "titan.jpg",
-        "monster": "The spirits of the nether abound on days such as these. Be wary, for whilst you pass through them, they can surely do damage to you.",
+        "warning": "The spirits of the nether abound on days such as these. Be wary, for whilst you pass through them, they can surely do damage to you.",
+        "creature": null,
         "comment": "These are almost perfect adventuring conditions. Your armour will keep you warm, just be sure that your sword arm doesn't get chilled."
     },
 
@@ -53,15 +59,17 @@ var weatherFeedback = [
         "min-temp": 5.0,
         "max-temp": 10.0,
         "background": "stormy-skies.jpg",
-        "monster": "Although some think it too cold, I have seen Chimeras on days such as this with mine own eyes. Be watchful of the skies.",
-        "comment": "You'll be grateful of your armour today adventurer. The coldest days are surely behind you, but it's not comfortable yet."
+        "warning": "Although some think it too cold, I have seen Chimeras on days such as this with mine own eyes. Be watchful of the skies.",
+        "creature": null,
+        "comment": "You'll be grateful of your armour today adventurer. The coldest days are surely behind you, but it's not yet comfortable."
     },
 
     {
         "min-temp": 10.0,
         "max-temp": 15.0,
         "background": "floating-rocks.jpg",
-        "monster": "Traveller, be wary of Owlbears in the woods. They oft hunt on days such as these.",
+        "warning": "Traveller, be wary of Owlbears in the woods. They oft hunt on days such as these.",
+        "creature": null,
         "comment": "You could almost camp by the roadside in these temperatures adventurer. Handy, when separated from your favourite Inn."
     },
 
@@ -69,7 +77,8 @@ var weatherFeedback = [
         "min-temp": 15.0,
         "max-temp": 20.0,
         "background": "mild.jpg",
-        "monster": "Beware, for the fearsome Beholder abound in conditions such as these.",
+        "warning": "Beware, for the fearsome Beholder abound in conditions such as these.",
+        "creature": null,
         "comment": "On a day such as today, you would be pressed to notice the difference in temperature when entering or exiting those dungeons you so favour."
     },
 
@@ -77,7 +86,8 @@ var weatherFeedback = [
         "min-temp": 20.0,
         "max-temp": 25.0,
         "background": "forest.jpg",
-        "monster": "Be mindful of the treeants this day adventurer, for they are not as friendly as they would have you believe.",
+        "warning": "Be mindful of the treeants this day adventurer, for they are not as friendly as they would have you believe.",
+        "creature": null,
         "comment": "You will want to keep your battles short on a day such as this traveller."
     },
 
@@ -85,7 +95,8 @@ var weatherFeedback = [
         "min-temp": 25.0,
         "max-temp": 30.0,
         "background": "temperate.jpg",
-        "monster": "In these climes, the Bogleech amass in numbers. Be wary.",
+        "warning": "In these climes, the Bogleech amass in numbers. Be wary.",
+        "creature": null,
         "comment": "On a day such as this, a canny adventurer would actually seek out the dungeons rather than avoid them."
     },
 
@@ -93,7 +104,8 @@ var weatherFeedback = [
         "min-temp": 30.0,
         "max-temp": 35.0,
         "background": "bog.jpg",
-        "monster": "On these warm days, the slimes will come up from the bogs. Beware their suffocating grasp.",
+        "warning": "On these warm days, the slimes will come up from the bogs. Beware their suffocating grasp.",
+        "creature": null,
         "comment": "If you were to listen to me, you would stay in the Inn this day adventurer. This is no day for armour."
     },
 
@@ -101,7 +113,8 @@ var weatherFeedback = [
         "min-temp": 35.0,
         "max-temp": 40.0,
         "background": "jungle.jpg",
-        "monster": "When the air outside begins to match that of the upper levels of the nine hells, minor devils will begin to venture out into the world.",
+        "warning": "When the air outside begins to match that of the upper levels of the nine hells, minor devils will begin to venture out into the world.",
+        "creature": null,
         "comment": "Be sure to bring plenty of water skins on your travels, adventurer. On a day such as this, you will need them."
     },
 
@@ -109,7 +122,8 @@ var weatherFeedback = [
         "min-temp": 40.0,
         "max-temp": 50.0,
         "background": "dragon-hot.jpg",
-        "monster": "This is a perfect day for meeting Fire Giants, traveller. Be mindful of the earth-shaking that signals their approach.",
+        "warning": "This is a perfect day for meeting Fire Giants, traveller. Be mindful of the earth-shaking that signals their approach.",
+        "creature": null,
         "comment": "If travelling on this day adventurer, be sure to have a frost mage in your party."
     },
 
@@ -117,7 +131,8 @@ var weatherFeedback = [
         "min-temp": 50.0,
         "max-temp": 70.0,
         "background": "desert-golem.jpg",
-        "monster": "Surely this day will bring you desert travel, in climes such as these. Be mindful of Sand Golems.",
+        "warning": "Surely this day will bring you desert travel, in climes such as these. Be mindful of Sand Golems.",
+        "creature": null,
         "comment": "When the temperatures climb this high adventurer, might I suggest some magical armour as an alternative to leather and steel?"
     },
 
@@ -125,7 +140,8 @@ var weatherFeedback = [
         "min-temp": 70.0,
         "max-temp": 100.0,
         "background": "superhot.jpg",
-        "monster": "In temperatures such as these, the Fire Succubi thrive. Listen not to their song, lest you want to meet a truly firey demise.",
+        "warning": "In temperatures such as these, the Fire Succubi thrive. Listen not to their song, lest you want to meet a truly firey demise.",
+        "creature": null,
         "comment": "Be wary, adventurer, of you steel weapons. They will be difficult to handle in such temperatures."
     },
 
@@ -133,7 +149,8 @@ var weatherFeedback = [
         "min-temp": 100.0,
         "max-temp": 1000000.0,
         "background": "plain-of-fire.jpg",
-        "monster": "In a world such as this, beware the fury of the Balrog.",
+        "warning": "In a world such as this, beware the fury of the Balrog.",
+        "creature": null,
         "comment": "Only the most brave or foolhardy of warriors would visit the realms of fire. I hope you have a strong arsenal of spells to protect you from the heat."
     }
 ];

@@ -84,10 +84,10 @@ function populatePage() {
     conditions.setAttribute("title", json.weather[0].description);
 
     comment.textContent = weatherInfo["comment"];
-    monster.textContent = weatherInfo["monster"];
-    console.log(weatherInfo["monster"]);
+    monster.textContent = weatherInfo["warning"];
+    console.log(weatherInfo["warning"]);
 
-    section.style.background = "url(img/backgrounds/" + weatherInfo["background"] + ")";
+    section.style.background = "linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.1)), url(img/backgrounds/" + weatherInfo["background"] + ")";
 }
 
 if (navigator.geolocation) {
