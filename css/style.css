@@ -214,24 +214,33 @@ body #loader {
   #fantasticWeather .messageWrapper {
     margin-top: 50px;
     text-align: left;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     display: flex;
     flex-direction: column; }
+    @media screen and (min-width: 1200px) {
+      #fantasticWeather .messageWrapper {
+        font-size: 2.5rem; } }
     #fantasticWeather .messageWrapper span:first-of-type {
       margin-bottom: 20px; }
   #fantasticWeather .creatureWrapper .topRow {
     width: 100%; }
     #fantasticWeather .creatureWrapper .topRow h3 {
-      font-size: 2.8rem;
       text-align: left;
-      color: #d9d9d9; }
+      color: #d9d9d9;
+      font-size: 2.25rem; }
+      @media screen and (min-width: 1200px) {
+        #fantasticWeather .creatureWrapper .topRow h3 {
+          font-size: 2.8rem; } }
   #fantasticWeather .creatureWrapper .creatureTable {
     display: flex; }
     #fantasticWeather .creatureWrapper .creatureTable #creatureWarning {
       text-align: left;
-      font-size: 2.5rem;
       flex-grow: 3;
-      padding-right: 10px; }
+      padding-right: 10px;
+      font-size: 2.0rem; }
+      @media screen and (min-width: 1200px) {
+        #fantasticWeather .creatureWrapper .creatureTable #creatureWarning {
+          font-size: 2.5rem; } }
     #fantasticWeather .creatureWrapper .creatureTable .imgWrapper {
       flex-grow: 1;
       text-align: center; }
@@ -244,13 +253,19 @@ footer {
   padding-top: 10px;
   text-align: center;
   color: #ffffff; }
-  footer a.btn {
-    margin-left: 3px;
-    margin-right: 3px; }
-    footer a.btn:first-of-type {
-      margin-left: 0; }
-    footer a.btn:last-of-type {
-      margin-right: 0; }
+  footer .buttonStrip {
+    display: flex;
+    justify-content: center; }
+    footer .buttonStrip a.btn {
+      margin-left: 3px;
+      margin-right: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      footer .buttonStrip a.btn:first-of-type {
+        margin-left: 0; }
+      footer .buttonStrip a.btn:last-of-type {
+        margin-right: 0; }
   footer .copyright {
     margin-top: 5px; }
     footer .copyright a {
