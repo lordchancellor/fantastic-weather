@@ -61,6 +61,17 @@ var transformProp = (function() {
     return "transform";
 })();
 
+//CAPITALISE WEATHER TITLE ATTRIBUTE
+function capitalise(str) {
+    var arr = str.split(' ');
+    
+    for (var i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1, arr[i].length);
+    }
+    
+    return arr.join(' ');
+}
+
 //WRITE THE GEO-DATA TO THE PAGE
 function populatePage() {
     var section = document.getElementById("fantasticWeather");
@@ -82,7 +93,7 @@ function populatePage() {
 
     conditions.setAttribute("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
     conditions.setAttribute("alt", json.weather[0].description);
-    conditions.setAttribute("title", json.weather[0].description);
+    conditions.setAttribute("title", capitalise(json.weather[0].description));
 
     comment.textContent = weatherInfo["comment"];
     monster.textContent = weatherInfo["warning"];

@@ -44,7 +44,7 @@ var weatherFeedback = [
     {
         "min-temp": -5.0,
         "max-temp": 0.0,
-        "filter": "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
+        "filter": "linear-gradient(rgba(0, 0, 255, 0.1), rgba(0, 0, 255, 0.1))",
         "background": "cold.jpg",
         "warning": "I should advise against forest travel in such conditions, lest you want to find yourself tracked by Frost Wolves.",
         "creature": "frost-wolf.png",
@@ -54,7 +54,7 @@ var weatherFeedback = [
     {
         "min-temp": 0.0,
         "max-temp": 5.0,
-        "filter": "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
+        "filter": "linear-gradient(rgba(0, 0, 255, 0.1), rgba(0, 0, 255, 0.1))",
         "background": "titan.jpg",
         "warning": "The spirits of the nether abound on days such as these. Be wary, for whilst you pass through them, they can surely do damage to you.",
         "creature": "spirit.png",
@@ -64,17 +64,17 @@ var weatherFeedback = [
     {
         "min-temp": 5.0,
         "max-temp": 10.0,
-        "filter": "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
+        "filter": "linear-gradient(rgba(0, 0, 255, 0.1), rgba(0, 0, 255, 0.1))",
         "background": "stormy-skies.jpg",
         "warning": "Although some think it too cold, I have seen Chimeras on days such as this with mine own eyes. Be watchful of the skies.",
         "creature": "chimera.png",
-        "comment": "You'll be grateful of your armour today adventurer. The coldest days are surely behind you, but it's not yet comfortable."
+        "comment": "You'll be grateful of your armour today adventurer, though I doubt you'll notice the cold whilst swinging your sword."
     },
 
     {
         "min-temp": 10.0,
         "max-temp": 15.0,
-        "filter": "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
+        "filter": "linear-gradient(rgba(0, 0, 255, 0.1), rgba(0, 0, 255, 0.1))",
         "background": "floating-rocks.jpg",
         "warning": "Traveller, be wary of Owlbears in the woods. They oft hunt on days such as these.",
         "creature": "owl-bear.png",
