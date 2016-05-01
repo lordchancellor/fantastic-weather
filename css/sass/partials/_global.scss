@@ -6,7 +6,6 @@ html {
 body {
     font-size: 16px;
     font-family: 'Calligraffitti', sans-serif;
-    //font-family: 'Amatic SC', sans-serif;
 }
 
 //INITIAL CONTENT STATES
@@ -20,7 +19,7 @@ footer {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    
+
     .siteContent {
         flex: 1;
     }
@@ -31,8 +30,9 @@ footer {
     background: $github;
     border-color: $githubBorder;
     color: $whiteText;
-    
-    &:hover {
+
+    &:hover,
+    &:focus {
         background: $githubShade;
         color: $whiteText;
     }
@@ -42,8 +42,9 @@ footer {
     background: $twitter;
     border-color: $twitterBorder;
     color: $whiteText;
-    
-    &:hover {
+
+    &:hover,
+    &:focus {
         background: $twitterShade;
         color: $whiteText;
     }

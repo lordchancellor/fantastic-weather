@@ -23,7 +23,7 @@ footer {
   background: #333333;
   border-color: #111111;
   color: #ffffff; }
-  .btn-github:hover {
+  .btn-github:hover, .btn-github:focus {
     background: #222222;
     color: #ffffff; }
 
@@ -31,7 +31,7 @@ footer {
   background: #55acee;
   border-color: #3E7EAE;
   color: #ffffff; }
-  .btn-twitter:hover {
+  .btn-twitter:hover, .btn-twitter:focus {
     background: #4C9AD4;
     color: #ffffff; }
 
