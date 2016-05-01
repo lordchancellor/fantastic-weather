@@ -31,10 +31,6 @@
 
         #conditions {
             width: 65px;
-            
-            &[target="title"] {
-                text-transform: capitalize;    
-            }
         }
     }
 
@@ -63,7 +59,7 @@
 
             h3 {
                 text-align: left;
-                color: #d9d9d9;
+                //color: #f0ad4e;
                 font-size: 2.25rem;
 
                 @media screen and (min-width: 1200px) {
@@ -74,6 +70,11 @@
 
         .creatureTable {
             display: flex;
+            flex-direction: column;
+
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+            }
 
             #creatureWarning {
                 text-align: left;
@@ -91,12 +92,22 @@
                 text-align: center;
 
                 img {
-                    //width: 80%;
                     margin-top: 10px;
                 }
             }
         }
     }
+
+    .unitSwitchWrapper {
+        text-align: center;
+        margin-top: 16px;
+
+        @media screen and (min-width: 768px) {
+            text-align: left;
+            margin-top: 0px;
+        }
+    }
+
 }
 
 
@@ -109,7 +120,7 @@ footer {
     .buttonStrip {
         display: flex;
         justify-content: center;
-        
+
         a.btn {
             @include marginX(3px);
             display: flex;
@@ -137,5 +148,9 @@ footer {
                 color: $whiteText;
             }
         }
+    }
+
+    .disclaimer {
+        font-size: 0.75rem;
     }
 }
