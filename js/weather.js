@@ -121,7 +121,7 @@ function capitalise(str) {
 // First call the Google Maps API in order to obtain the user's location, then call the Dark Sky API to get weather info
 function callApi(lat, lon) {
     console.log("You are at: " + lat + ", " + lon);
-    var googleAPI = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&sensor=false';
+    var googleAPI = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&sensor=false';
 
     $.ajax({
         url: googleAPI,
