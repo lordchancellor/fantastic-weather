@@ -1,6 +1,5 @@
 /* weather.js - Primary JavaScript for Fantastic Weather */
 
-var json;
 var geoData = {};
 var metric;
 
@@ -29,18 +28,13 @@ function isMetric() {
 }
 
 //SWITCH UNITS
-function setUnits(unit) {
+function setUnits(unit, temp) {
     var metric = unit; //Entirely unnecessary, but reads better in the if/else statement
 
-    if (metric) {
-        localStorage.fantasticWeatherUseMetric = true;
-    }
-    else {
-        localStorage.fantasticWeatherUseMetric = false;
-    }
+    localStorage.fantasticWeatherUseMetric = metric ? true : false;
 
     toggleButtons(unit);
-    setTemperature(unit);
+    setTemperature(unit, temp);
 }
 
 //TOGGLE THE UNIT SWITCH BUTTONS
@@ -59,9 +53,10 @@ function toggleButtons(metric) {
 }
 
 //SWITCH OFF THE LOADER WHEN THE GEO DATA IS READY
-function contentLoaded() {
+function contentLoaded(data, location) {
+    var temp = data["currently"]["temperature"];
     metric = isMetric();
-    populatePage();
+    populatePage(data, location);
 
     document.getElementById("loader").style.display = "none";
     document.getElementById("body").classList.add("site");
@@ -74,20 +69,20 @@ function contentLoaded() {
 
     if (addEventListener) {
         btnMetric.addEventListener("click", function() {
-            setUnits(true);
+            setUnits(true, temp);
         }, false);
 
         btnImperial.addEventListener("click", function() {
-            setUnits(false);
+            setUnits(false, temp);
         }, false);
     }
     else {
         btnMetric.appendevent("onclick", function() {
-            setUnits(true);
+            setUnits(true, temp);
         });
 
         btnImperial.appendevent("onclick", function() {
-            setUnits(false);
+            setUnits(false, temp);
         });
     }
 }
@@ -123,17 +118,41 @@ function capitalise(str) {
     return arr.join(' ');
 }
 
-//CALL THE OPEN WEATHER API AND STORE THE RESULTS IN THE JSON VARIABLE
+// First call the Google Maps API in order to obtain the user's location, then call the Dark Sky API to get weather info
 function callApi(lat, lon) {
     console.log("You are at: " + lat + ", " + lon);
-    var apiKey = "1625f9ff65d8544701fddfd57eef8846";
-    var apiCall = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&APPID=" + apiKey;
+    var googleAPI = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&sensor=false';
 
-    $.getJSON(apiCall, function(data) {
-        json = data;
-        console.log("Returning data...");
-        console.log(JSON.stringify(data));
-        contentLoaded();
+    $.ajax({
+        url: googleAPI,
+        type: 'GET',
+        success: function(data) {
+            var loc = data.results[0]["address_components"][2]["long_name"];
+            callWeatherAPI(lat, lon, loc);
+        },
+        error: function(err) {
+            callWeatherAPI(lat, lon, 'Location Unavailable');
+        }
+    });
+}
+
+var callWeatherAPI = function callWeatherAPI(lat, lon, location) {
+    var apiKey = "3cc258eb89fd9688bf0d783aab428b18/";
+    var query = '?units=si';
+    var apiCall = "https://api.darksky.net/forecast/" + apiKey + lat + ',' + lon + query;
+
+    $.ajax({
+        url: apiCall,
+        type: 'GET',
+        dataType: 'jsonp',
+        success: function(data) {
+            console.log('Data loaded successfully');
+            contentLoaded(data, location);
+        },
+        error: function(err) {
+            console.log('Failed to load weather data');
+            console.log(err);
+        }
     });
 }
 
@@ -160,44 +179,45 @@ function toFahrenheit(temp) {
 }
 
 //SET THE TEMPERATURE BASED UPON THE CHOSEN UNIT OF MEASURE
-function setTemperature(metric) {
+function setTemperature(metric, temp) {
     var temperature = document.getElementById("temperature");
 
     if (metric) {
-        temperature.textContent = Math.round(json.main.temp * 10) / 10 + "\u00b0" + "C";
+        temperature.textContent = Math.round(temp * 10) / 10 + "\u00b0" + "C";
     }
     else {
-        temperature.textContent = Math.round(toFahrenheit(json.main.temp) * 10) / 10 + "\u00b0" + "F";
+        temperature.textContent = Math.round(toFahrenheit(temp) * 10) / 10 + "\u00b0" + "F";
     }
 }
 
 //WRITE THE GEO-DATA TO THE PAGE
-function populatePage() {
+function populatePage(data, loc) {
+    var current = data["currently"];
+
     var section = document.getElementById("fantasticWeather");
     var location = document.getElementById("location");
     var wind = document.getElementById("wind");
     var conditions = document.getElementById("conditions");
 
-    var weatherInfo = getWeatherInfo(json.main.temp);
+    var weatherInfo = getWeatherInfo(current["temperature"]);
     var comment = document.getElementById("comment");
     var monster = document.getElementById("creatureWarning");
     var portrait = document.getElementById("creaturePortrait");
 
-    location.textContent = json.name;
+    location.textContent = loc;
 
-    setUnits(metric);
+    setUnits(metric, current["temperature"]);
 
-    wind.childNodes[3].textContent = Math.round(json.wind.speed) + "mph";
-    wind.childNodes[1].style[transformProp] = "rotate(" + json.wind.deg + "deg)";
+    wind.childNodes[3].textContent = Math.round(current["windSpeed"]) + "mph";
+    wind.childNodes[1].style[transformProp] = "rotate(" + current["windBearing"] + "deg)";
 
-    conditions.setAttribute("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png");
-    conditions.setAttribute("alt", json.weather[0].description);
-    conditions.setAttribute("title", capitalise(json.weather[0].description));
+    conditions.setAttribute("src", "/img/icons/" + current["icon"] + ".png");
+    conditions.setAttribute("alt", current["summary"]);
+    conditions.setAttribute("title", capitalise(current["summary"]));
 
     comment.textContent = weatherInfo["comment"];
     monster.textContent = weatherInfo["warning"];
 
-    //section.style.background = "linear-gradient(rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.1)), url(img/backgrounds/" + weatherInfo["background"] + ")";
     section.style.backgroundImage = "url(img/backgrounds/" + weatherInfo["background"] + ")";
     section.style.backgroundSize = "cover";
 
