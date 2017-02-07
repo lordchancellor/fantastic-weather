@@ -211,7 +211,7 @@ function populatePage(data, loc) {
     wind.childNodes[3].textContent = Math.round(current["windSpeed"]) + "mph";
     wind.childNodes[1].style[transformProp] = "rotate(" + current["windBearing"] + "deg)";
 
-    conditions.setAttribute("src", "/img/icons/" + current["icon"] + ".png");
+    conditions.setAttribute("src", "img/icons/" + current["icon"] + ".png");
     conditions.setAttribute("alt", current["summary"]);
     conditions.setAttribute("title", capitalise(current["summary"]));
 
